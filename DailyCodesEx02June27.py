@@ -4,16 +4,21 @@
 
 #Follow-up: what if you can't use division?
 
+
+#Solution:Let the input list be of length n. 
+# Create a list a where a[x]=product of all items from input[x+1] to input [n-1]
+#Create another list b, where b[x]=product of all items from input[0] to input[x-1] * a[x]
+
 import random
 
-def sucproduct(a,x):
+def sucproduct(a,x): #Function to find product of input[x+1] to input[n-1]
 	s=1
 	if (x!=n-1):
 		for i in range(x,n-1):
 			s*=a[i+1]
 	return s
 
-def preproduct(a,x):
+def preproduct(a,x):#Function to find product of input[0] to input[x-1]
 	s=1
 	if (x>0 and x <n):
 		for i in range(0,x):
@@ -22,7 +27,7 @@ def preproduct(a,x):
 
 while True:
 	try: 
-		n=int(input("Please enter the length of list you want to be generated "))
+		n=int(input("Please enter the length of list you want to generate"))
 	except ValueError:
 		print("Sorry, I can accept only numbers")
 		continue
@@ -56,7 +61,7 @@ gen_list=[]
 prod_list1=[1 for i in range(n)]
 prod_list2=[1 for i in range(n)]
 
-for i in range(n):
+for i in range(n):  # Generating a random input list
 	gen_list.append(random.randint(l_min,l_max))
 
 for i in range(n):
