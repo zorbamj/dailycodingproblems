@@ -4,7 +4,7 @@ import random
 
 while True:
 	try: 
-		n=int(input("Please enter the length of list you want to be generated "))
+		n=int(input("Please enter the length of list you want to generate "))
 	except ValueError:
 		print("Sorry, I can accept only numbers")
 		continue
@@ -30,7 +30,7 @@ while True:
 		print("Sorry please enter a number")
 		continue
 	if (l_max<=l_min):
-		print("How can upper limit lesser than or equal to lower limit, please enter a higher value ")
+		print("Upper limit should be greater than lower limit, please enter a higher value ")
 	else:
 		break
 
@@ -41,7 +41,7 @@ while True:
 		print("Sorry, I can accept only numbers")
 		continue
 	if (user_entry>=(2*l_max) and user_entry<l_min):
-		print("Case is impossible, the sum cannot go beyond twice the upperlimit and below lower limit")
+		print("Case is impossible, the sum cannot go beyond twice the upperlimit, and never below lower limit")
 	else:
 		break
 
